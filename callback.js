@@ -1,7 +1,5 @@
 // const numbers = [1, 2, 3, 4];
 
-const { AsyncLocalStorage } = require("async_hooks");
-
 // // Using an anonymous function as a callback
 // // numbers.forEach((number) => {
 // //   console.log(number);
@@ -13,6 +11,29 @@ const { AsyncLocalStorage } = require("async_hooks");
 
 // numbers.forEach(print);
 
+// Asynchronous Callback
+
 // function f(callback) {
-//     setTimeout(() => console.log())
+//   setTimeout(() => callback(), 1000);
 // }
+
+// const callback = function () {
+//   console.log("This is a callback");
+// };
+
+// f(callback);
+
+// console.log("Hello world");
+
+// Synchronous Callback
+
+// function f(callback) {
+//   callback();
+// }
+
+// const callback = function () {
+//   console.log("This is a callback");
+// };
+
+// f(callback);
+// console.log("Hello");
