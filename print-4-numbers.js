@@ -11,12 +11,25 @@ function print2() {
   console.log(number2);
 }
 
+// Using an anonymous function for a callback
 function print3() {
   const fs = require("fs");
   fs.readFile("./number3.txt", "utf-8", function (err, number3) {
     console.log(number3);
+    print4();
   });
 }
+
+// Using a non-anonymous function for a callback
+// function callback(err, number3) {
+//   console.log(number3);
+//   print4();
+// }
+
+// function print3() {
+//   const fs = require("fs");
+//   fs.readFile("./number3.txt", "utf-8", callback);
+// }
 
 function print4() {
   const number4 = 4;
@@ -26,7 +39,7 @@ function print4() {
 print1();
 print2();
 print3();
-print4();
+// print4();
 
 // A callback is a function passed as an argument when calling a function that will start executing a task in the background.
 // When this background task is done running, it calls the callback function to let you know about the changes.
