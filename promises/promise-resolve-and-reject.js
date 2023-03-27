@@ -9,3 +9,4 @@ const somePromise = new Promise(function (resolve, reject) {
 });
 
 logToConsole(somePromise);
+const value = "string";
