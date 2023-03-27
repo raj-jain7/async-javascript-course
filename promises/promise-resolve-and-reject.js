@@ -10,3 +10,7 @@ const somePromise = new Promise(function (resolve, reject) {
 
 logToConsole(somePromise);
 const value = "string";
+
+// Promise.resolve returns a promise object that is resolved with the given value
+const resolvedPromise = Promise.resolve("hello");
+logToConsole(resolvedPromise);
