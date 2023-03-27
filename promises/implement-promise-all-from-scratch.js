@@ -33,6 +33,9 @@ const promiseAll = function (arrayOfPromises) {
 
   return new Promise((resolve, reject) => {
     arrayOfPromises.forEach((promise, index) => {
+      if (promise instanceof Promise === false) {
+        promise = Promise.resolve(promise);
+      }
       promise
         .then((result) => {
           settledPromisesCount += 1;
@@ -43,7 +46,7 @@ const promiseAll = function (arrayOfPromises) {
         })
         // If one promise fails, need to reject all of them
         .catch((reason) => {
-          reject(reason);
+          return reject(reason);
         });
     });
   });
@@ -59,10 +62,23 @@ const promiseAll = function (arrayOfPromises) {
 
 // Example 2 - Not working
 
-promiseAll([askFirstDealer(), askSecondDealer(), askThirdDealerFails()])
-  .then((values) => {
-    console.log(values);
-  })
-  .catch((reason) => {
-    console.log(reason);
-  });
+// promiseAll([askFirstDealer(), askSecondDealer(), askThirdDealerFails()])
+//   .then((values) => {
+//     console.log(values);
+//   })
+//   .catch((reason) => {
+//     console.log(reason);
+//   });
+
+// Example 3
+
+// promiseAll([]).then((values) => {
+//   console.log(values);
+// });
+
+// Example 4
+promiseAll([1, 2, 3, 4]).then((values) => {
+  console.log(values);
+});
+
+// If one of the promises gets rejected, then the whole promise will get rejected as well
