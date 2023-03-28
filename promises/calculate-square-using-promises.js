@@ -23,6 +23,7 @@ calculateSquare("Random").then(
   }
 );
 
+
 // When it passes
 calculateSquare(2).then(
   (value) => {
