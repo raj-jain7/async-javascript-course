@@ -14,8 +14,8 @@ function getAnotherSpecificNumber() {
 
 // Option 1
 async function f() {
-  const specificNumber = await getSpecificNumber();
   const anotherSpecificNumber = await getAnotherSpecificNumber();
+  const specificNumber = await getSpecificNumber();
   console.log(specificNumber);
   console.log(anotherSpecificNumber);
 }
@@ -24,13 +24,13 @@ f();
 // Both values are loaded at the same time
 
 // Option 2
-function func() {
-  getSpecificNumber().then((value) => {
-    console.log(value);
-  });
-  getAnotherSpecificNumber().then((value) => {
-    console.log(value);
-  });
-}
-
-func();
+// function func() {
+//   getSpecificNumber().then((value) => {
+//     console.log(value);
+//   });
+//   getAnotherSpecificNumber().then((value) => {
+//     console.log(value);
+//   });
+// }
+//
+// func();
